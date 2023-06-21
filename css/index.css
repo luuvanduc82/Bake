@@ -1,0 +1,747 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* nếu set font-size ở html thì đơn vj rem sẽ lấy theo giá trị này: ví dụ như đang là 18 thì 1rem bằng 18px */
+    /* nếu không khai báo fs ở đây thì 1 rem sẽ mặc đinh là 16px */
+}
+
+body {
+    background-color: #fff;
+    color: #212529;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    background-color: #ff0e83;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 0.875rem;
+    border-radius: 5px;
+    padding: 13px 32px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: black;
+    border-color: #ff0e83
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+
+/* header css */
+
+header {
+    background-color: #4e2a84;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header_content {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header_content ul {
+    list-style: none;
+}
+
+.header_content ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.header_content ul a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all .3s linear;
+}
+
+.header_content ul li.active a {
+    color: #ff0e83;
+}
+
+.header_content ul a:hover {
+    color: #ff0e83;
+}
+
+.header_content p {
+    color: #fff;
+    font-size: 37px;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+
+/* css carousel */
+
+.carousel {
+    background-image: url(../img/b3.jpg);
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel .carousel_content h1 {
+    font-size: 3.5rem;
+}
+
+.carousel_content p {
+    font-size: 1.1rem;
+    padding: 23px 0;
+}
+
+
+/* Intro css */
+
+.intro {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    /* grid-template-columns: repeat(4,1fr); fr là đơn vị của grid, nên chia theo kiểu này, vì mấy column số lẻ thì khó chia */
+}
+
+.intro .intro_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.intro_ab1 {
+    grid-column: 2/span 2;
+    /*cách viết thứ 2:margin: ; grid-column: 2/4; */
+}
+
+.intro_bake {
+    grid-column: 1/ span 2;
+}
+
+.intro_ab4 {
+    grid-column: 3/5;
+}
+
+.intro_item {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.intro_item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.intro_item p {
+    color: #c1c1c1;
+    font-size: 0.875rem;
+    line-height: 29px;
+}
+
+.intro_item>div {
+    padding: 0 32px;
+}
+
+.intro_item:first-child,
+.intro_item:nth-child(8) {
+    background-color: #4e2a84;
+}
+
+.intro_item:nth-child(3) {
+    background-color: #ff0e83;
+}
+
+.intro_item:nth-child(4) {
+    background-color: #ed6498;
+}
+
+.intro_item:nth-child(6) {
+    background-color: #836eaa;
+}
+
+
+/* css number */
+
+.number {
+    padding: 70px 0;
+}
+
+.number_content {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.number_item p:first-of-type {
+    /* nếu dùng first-child thì trong thẻ cha chỉ chứa 1 loại thẻ, nếu có thẻ img phía đầu thì k chọn được */
+    /* còn first-of-type nó sẽ lấy loại thẻ đầu tiên, nếu có thẻ img đầu tiên thì vẫn lấy được thẻ p sau */
+    font-size: 2rem;
+    color: #4e2a84;
+    font-weight: 600;
+}
+
+.number_item p:last-of-type {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding: 24px 0;
+}
+
+
+/* css services */
+
+.services {
+    background-image: url(../img/s1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 70px 0;
+}
+
+.services h2 {
+    color: #fff;
+}
+
+.services_content {
+    width: 70%;
+    margin: auto;
+    display: flex;
+}
+
+.services_item {
+    padding: 0 20px;
+}
+
+.services_item i {
+    width: 105px;
+    height: 105px;
+    border: 1px solid #4e2a84;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #4e2a84;
+    font-size: 3.75rem;
+    line-height: 105px;
+    transition: all .5s;
+}
+
+.services_item h3 {
+    font-size: 1.5rem;
+    margin: 17px 0;
+    font-weight: 500;
+}
+
+.services_item p {
+    font-weight: 500;
+    line-height: 25px;
+    font-size: 0.875rem;
+    padding-bottom: 12px;
+}
+
+.services_item button {
+    border-width: 2px;
+    text-transform: capitalize;
+    padding: 12px 27px;
+}
+
+.services_item:hover i {
+    color: #ff0e83;
+}
+
+
+/* css gallery */
+
+.gallery {
+    padding: 70px 0;
+}
+
+.gallery .gallery_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.gallery_content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery_g1 {
+    grid-column: 1 / 3;
+}
+
+.gallery_g6 {
+    grid-column: 3 / span 2;
+}
+
+.gallery_item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 132, 163, 0.3);
+    color: white;
+    padding: 38px 28px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gallery_overlay h3 {
+    font-size: 1.875rem;
+    position: relative;
+    padding-bottom: 10px;
+    transform: translateY(20px);
+    transition: all .4s ease-in-out;
+}
+
+.gallery_overlay span {
+    font-weight: 300;
+}
+
+.gallery_overlay p {
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: all .5s;
+    transform: translateY(50px);
+}
+
+.gallery_overlay h3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(15px);
+}
+
+.gallery_item:hover .gallery_overlay h3 {
+    transform: translateY(0);
+}
+
+.gallery_item:hover .gallery_overlay h3::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery_item:hover .gallery_overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* css team */
+
+.team {
+    background-color: #4e2a84;
+    padding: 70px 0;
+}
+
+.team h2 {
+    color: #fff;
+}
+
+.team_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 75%;
+    margin: auto;
+}
+
+.team_item {
+    position: relative;
+}
+
+.team_content .team_item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.team_title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff0e83;
+    color: #fff;
+    width: 100%;
+    padding: 30px;
+    opacity: 1;
+    transition: all .5s;
+}
+
+.team_item h3 {
+    font-size: 1.3rem;
+}
+
+.team_item p {
+    font-size: 0.875rem;
+    line-height: 28px;
+}
+
+.team_details {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 100px 40px;
+    transition: all .5s;
+}
+
+.team_details h3 {
+    color: #ff0e83;
+}
+
+.team_txt {
+    margin: 8px 0;
+}
+
+.team_socials {
+    margin-top: 24px;
+}
+
+.team_socials i {
+    border: 1.5px solid rgba(255, 255, 255, 0.493);
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    margin-right: 5px;
+    transition: all 0.5s;
+}
+
+.team_socials i:hover {
+    color: #ff0e83;
+    border-color: #ff0e83;
+}
+
+.team_item:hover .team_title {
+    opacity: 0;
+}
+
+.team_item:hover .team_details {
+    opacity: 1;
+}
+
+
+/* css feeback */
+
+.feedback {
+    background: url(../img/cc1.jpg);
+    background-size: cover;
+    padding: 70px 0;
+}
+
+.feedback h2 {
+    color: white;
+}
+
+.feedback .feedback_content {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #ff0e83;
+    background-color: rgba(255, 255, 255, 0.582);
+    padding: 30px;
+}
+
+.feedback_content i {
+    font-size: 1.3rem;
+    color: #2cebff;
+    padding: 0 18px;
+}
+
+.feedback_content p {
+    color: black;
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 1.3px;
+}
+
+.feedback_content p:last-child {
+    color: white;
+    font-weight: bold;
+}
+
+.feedback .owl-theme .owl-dots .owl-dot span {
+    background: rgba(0, 0, 0, 0.493);
+}
+
+.feedback .owl-theme .owl-dots .owl-dot.active span,
+.feedback .owl-theme .owl-dots .owl-dot:hover span {
+    background: black;
+}
+
+
+/* css contact */
+
+.contact {
+    padding: 70px 0;
+}
+
+.contact_form form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+    margin: auto;
+    gap: 15px 30px;
+}
+
+.contact_form textarea,
+.contact_form button {
+    grid-column: 1/3;
+    padding: 15px;
+}
+
+.contact_form input,
+.contact_form textarea {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all .5s;
+}
+
+.contact_form input:focus,
+.contact_form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+    color: black;
+    font-size: 0.875rem;
+}
+
+.contact_form button {
+    border-radius: 0;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.contact_form button:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+
+/* ccss map */
+
+.contact_map {
+    margin-top: 50px;
+}
+
+.contact_info {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.contact_info i {
+    font-size: 2rem;
+    color: #4e2a84;
+}
+
+.contact_info p {
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+
+/* css footer  */
+
+footer {
+    background: black;
+    padding: 50px 0;
+    color: white;
+}
+
+.footer_main {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.footer_item {
+    width: 25%;
+    padding: 0 20px;
+}
+
+.footer_item h3 {
+    font-size: 1.3rem;
+    color: #ff0e83;
+    margin-bottom: 1rem;
+}
+
+.footer_item p {
+    font-size: 0.8rem;
+    line-height: 28px;
+    padding-bottom: 1rem;
+}
+
+.footer_socials i {
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid white;
+    text-align: center;
+    margin-right: 10px;
+    transition: all .4s;
+}
+
+.footer_socials i:hover {
+    color: #ff0e83;
+    border-color: #ff0e83;
+}
+
+.footer_time {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted white;
+}
+
+.footer_time p {
+    padding-bottom: 0;
+    margin: 10px 0;
+}
+
+.footer_time:nth-of-type(1) p {
+    margin-top: 0;
+}
+
+.footer_item .form_sub input {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.footer_item .form_sub input:focus {
+    outline: unset;
+}
+
+.footer_item .form_sub button {
+    padding: 7px 16px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+    text-transform: none;
+    border: 1px solid #ff0e83;
+}
+
+.footer_copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.footer_copyright span {
+    color: #ff0e83;
+}
+
+
+/* css back to top */
+
+.back_to_top {
+    right: 50px;
+    bottom: 50px;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top--fade-out {
+    opacity: .5;
+}
+
+.back_to_top i {
+    color: #2cebff;
+    font-size: 2rem;
+    border: 2px solid #2cebff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+.team_item_animated {
+    overflow: hidden;
+}
+
+.team_item_animated .team_details {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.team_item_animated:hover .team_details {
+    transform: translateX(0);
+    opacity: 1;
+}
